@@ -50,12 +50,12 @@
   ],
   "scripts": {
     "build": "pack-up build",
-    "clean": "run -T rimraf ./dist",
-    "lint": "run -T eslint .",
+    "clean": "rimraf ./dist",
+    "lint": "eslint .",
     "prepublishOnly": "yarn clean && yarn build",
-    "test:ts": "run -T tsc --noEmit",
-    "test:unit": "run -T jest",
-    "test:unit:watch": "run -T jest --watch",
+    "test:ts": "tsc --noEmit",
+    "test:unit": "jest",
+    "test:unit:watch": "jest --watch",
     "watch": "pack-up watch"
   },
   "dependencies": {

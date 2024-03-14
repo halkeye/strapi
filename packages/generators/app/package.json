@@ -37,10 +37,10 @@
   ],
   "scripts": {
     "build": "pack-up build && run copy-files",
-    "clean": "run -T rimraf ./dist",
+    "clean": "rimraf ./dist",
     "copy-files": "copyfiles -u 1 -a 'src/resources/files/**/*' 'src/resources/dot-files/**/*' 'src/resources/**/*.template' dist",
-    "lint": "run -T eslint .",
-    "test:ts": "run -T tsc --noEmit",
+    "lint": "eslint .",
+    "test:ts": "tsc --noEmit",
     "watch": "pack-up watch"
   },
   "dependencies": {
@@ -57,6 +57,7 @@
   },
   "devDependencies": {
     "@strapi/pack-up": "4.20.3",
+    "eslint-config-custom": "workspace:*",
     "copyfiles": "2.4.1"
   },
   "engines": {

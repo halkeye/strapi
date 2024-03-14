@@ -43,13 +43,13 @@
   ],
   "scripts": {
     "build": "strapi plugin:build --force",
-    "clean": "run -T rimraf ./dist",
-    "lint": "run -T eslint .",
-    "test:front": "run -T cross-env IS_EE=true jest --config ./jest.config.front.js",
-    "test:front:ce": "run -T cross-env IS_EE=false jest --config ./jest.config.front.js",
-    "test:front:watch": "run -T cross-env IS_EE=true jest --config ./jest.config.front.js --watchAll",
-    "test:front:watch:ce": "run -T cross-env IS_EE=false jest --config ./jest.config.front.js --watchAll",
-    "test:ts:front": "run -T tsc -p admin/tsconfig.json",
+    "clean": "rimraf ./dist",
+    "lint": "eslint .",
+    "test:front": "cross-env IS_EE=true jest --config ./jest.config.front.js",
+    "test:front:ce": "cross-env IS_EE=false jest --config ./jest.config.front.js",
+    "test:front:watch": "cross-env IS_EE=true jest --config ./jest.config.front.js --watchAll",
+    "test:front:watch:ce": "cross-env IS_EE=false jest --config ./jest.config.front.js --watchAll",
+    "test:ts:front": "tsc -p admin/tsconfig.json",
     "watch": "strapi plugin:watch"
   },
   "dependencies": {
@@ -64,6 +64,7 @@
     "@testing-library/react": "14.0.0",
     "@testing-library/user-event": "14.4.3",
     "@types/styled-components": "5.1.32",
+    "eslint-config-custom": "workspace:*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "6.21.1",

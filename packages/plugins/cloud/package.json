@@ -30,10 +30,10 @@
   ],
   "scripts": {
     "build": "strapi plugin:build --force",
-    "clean": "run -T rimraf ./dist",
+    "clean": "rimraf ./dist",
     "develop": "strapi plugin:watch",
-    "lint": "run -T eslint .",
-    "test:ts:front": "run -T tsc -p admin/tsconfig.json"
+    "lint": "eslint .",
+    "test:ts:front": "tsc -p admin/tsconfig.json"
   },
   "dependencies": {
     "@strapi/design-system": "1.16.0",

@@ -32,10 +32,10 @@
   ],
   "scripts": {
     "build": "pack-up build",
-    "clean": "run -T rimraf ./dist",
-    "lint": "run -T tsc --noEmit && run -T eslint .",
-    "test:unit": "run -T jest",
-    "test:unit:watch": "run -T jest --watch",
+    "clean": "rimraf ./dist",
+    "lint": "tsc --noEmit && dlx eslint .",
+    "test:unit": "jest",
+    "test:unit:watch": "jest --watch",
     "watch": "pack-up watch"
   },
   "dependencies": {

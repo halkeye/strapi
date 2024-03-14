@@ -50,8 +50,8 @@
   ],
   "scripts": {
     "build": "pack-up build",
-    "clean": "run -T rimraf ./dist",
-    "lint": "run -T eslint .",
+    "clean": "rimraf ./dist",
+    "lint": "eslint .",
     "watch": "pack-up watch"
   },
   "dependencies": {

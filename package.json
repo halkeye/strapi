@@ -21,16 +21,7 @@
       "url": "https://strapi.io"
     }
   ],
-  "workspaces": [
-    "packages/*",
-    "packages/*/*",
-    "examples/*",
-    "examples/plugins/*",
-    ".github/actions/*",
-    "scripts/*"
-  ],
   "scripts": {
-    "build": "nx run-many --target=build --nx-ignore-cycles",
     "build:size": "cd examples/getstarted && yarn build",
     "clean": "nx run-many --target=clean --nx-ignore-cycles",
     "commit": "commit",
@@ -147,11 +138,11 @@
     "supertest": "6.3.3",
     "tar": "6.1.13",
     "ts-jest": "29.1.0",
+    "turbo": "1.12.5",
     "typescript": "5.3.2",
     "yalc": "1.0.0-pre.53",
     "yargs": "17.7.2"
   },
-  "packageManager": "yarn@4.0.1",
   "engines": {
     "node": ">=18.0.0 <=20.x.x",
     "npm": ">=6.0.0"

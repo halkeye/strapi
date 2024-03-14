@@ -43,12 +43,12 @@
   ],
   "scripts": {
     "build": "run pack-up build && run copy-files",
-    "clean": "run -T rimraf ./dist",
+    "clean": "rimraf ./dist",
     "copy-files": "copyfiles -u 1 -a 'src/**/*.html' 'src/**/*.png'  dist",
-    "lint": "run -T eslint .",
+    "lint": "eslint .",
     "prepublishOnly": "yarn clean && yarn build",
-    "test:unit": "run -T jest",
-    "test:unit:watch": "run -T jest --watch",
+    "test:unit": "jest",
+    "test:unit:watch": "jest --watch",
     "watch": "pack-up watch"
   },
   "dependencies": {

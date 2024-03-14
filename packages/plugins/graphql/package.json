@@ -43,8 +43,8 @@
   ],
   "scripts": {
     "build": "strapi plugin:build --force",
-    "clean": "run -T rimraf ./dist",
-    "lint": "run -T eslint .",
+    "clean": "rimraf ./dist",
+    "lint": "eslint .",
     "watch": "strapi plugin:watch"
   },
   "dependencies": {
