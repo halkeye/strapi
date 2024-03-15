@@ -140,7 +140,7 @@ export interface Strapi extends Container {
   reload: Reloader;
   config: ConfigProvider;
   services: Record<string, Common.Service>;
-  service(uid: Common.UID.Service): Common.Service;
+  service<TService extends Common.Service>(uid: Common.UID.Service): TService;
   controllers: Record<string, Common.Controller>;
   controller(uid: Common.UID.Controller): Common.Controller;
   contentTypes: Shared.ContentTypes;
