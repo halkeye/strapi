@@ -93,18 +93,11 @@ module.exports = {
 
     user.email = _.toLower(user.email);
 
-    if (!user.role) {
-      const defaultRole = await strapi.db
-        .query('plugin::users-permissions.role')
-        .findOne({ where: { type: advanced.default_role } });
-
-      user.role = defaultRole.id;
-    }
-
     try {
       const data = await strapi
         .service('plugin::content-manager.entity-manager')
         .create(user, userModel);
+
       const sanitizedData = await pm.sanitizeOutput(data, { action: ACTIONS.read });
 
       ctx.created(sanitizedData);

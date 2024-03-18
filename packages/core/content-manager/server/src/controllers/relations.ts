@@ -91,7 +91,8 @@ const getPublishedAtClause = (
    * As it only contains entries with publishedAt set.
    */
   if (!contentTypes.hasDraftAndPublish(targetModel)) {
-    return { $ne: null };
+    return {};
+    // return { $ne: null };
   }
 
   /**
