@@ -75,7 +75,7 @@ interface RelationsFieldProps
 
 interface RelationsFormValue {
   connect?: Relation[];
-  disconnect?: Pick<RelationResult, 'documentId'>[];
+  disconnect?: Relation[];
 }
 
 /**
@@ -748,7 +748,7 @@ const RelationsList = ({
       }
     }
 
-    addFieldRow(`${name}.disconnect`, { documentId: relation.documentId });
+    addFieldRow(`${name}.disconnect`, relation);
   };
 
   /**
