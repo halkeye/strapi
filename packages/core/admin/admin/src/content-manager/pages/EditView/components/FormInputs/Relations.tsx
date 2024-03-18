@@ -61,7 +61,7 @@ type RelationPosition =
     })
   | { end: boolean; before?: never; status?: never; locale?: never };
 
-interface Relation extends Pick<RelationResult, 'documentId' | 'id' | 'locale' | 'status'> {
+interface Relation extends Pick<RelationResult, 'documentId' | 'locale' | 'status'> {
   href: string;
   label: string;
   position?: RelationPosition;
@@ -220,7 +220,7 @@ const RelationsField = React.forwardRef<HTMLDivElement, RelationsFieldProps>(
          */
         __temp_key__: generateNKeysBetween(lastItemInList?.__temp_key__ ?? null, null, 1)[0],
         // Fallback to `id` if there is no `mainField` value, which will overwrite the above `id` property with the exact same data.
-        [props.mainField?.name ?? 'id']: relation[props.mainField?.name ?? 'id'],
+        [props.mainField?.name ?? 'documentId']: relation[props.mainField?.name ?? 'documentId'],
         label: getRelationLabel(relation, props.mainField),
         // @ts-expect-error – targetModel does exist on the attribute, but it's not typed.
         href: `../${COLLECTION_TYPES}/${props.attribute.targetModel}/${relation.documentId}`,
@@ -340,7 +340,7 @@ const addLabelAndHref =
       return {
         ...relation,
         // Fallback to `id` if there is no `mainField` value, which will overwrite the above `id` property with the exact same data.
-        [mainField?.name ?? 'id']: relation[mainField?.name ?? 'id'],
+        [mainField?.name ?? 'documentId']: relation[mainField?.name ?? 'documentId'],
         label: getRelationLabel(relation, mainField),
         href: `${href}/${relation.documentId}`,
       };
@@ -354,7 +354,7 @@ interface RelationsInputProps extends Omit<RelationsFieldProps, 'type'> {
   id?: string;
   model: string;
   onChange: (
-    relation: Pick<RelationResult, 'documentId' | 'id' | 'locale' | 'status'> & {
+    relation: Pick<RelationResult, 'documentId' | 'locale' | 'status'> & {
       [key: string]: any;
     }
   ) => void;

@@ -51,7 +51,7 @@ type UseDocumentActions = () => {
       documentId: string;
       params?: object;
     },
-    document: Omit<Document, 'id'>,
+    document: Omit<Document, 'documentId'>,
     trackerProperty?: Extract<
       TrackingEvent,
       { name: 'willCreateEntry' | 'didCreateEntry' | 'didNotCreateEntry' }
@@ -62,7 +62,7 @@ type UseDocumentActions = () => {
       model: string;
       params?: object;
     },
-    document: Omit<Document, 'id'>,
+    document: Omit<Document, 'documentId'>,
     trackerProperty?: Extract<
       TrackingEvent,
       { name: 'willCreateEntry' | 'didCreateEntry' | 'didNotCreateEntry' }
